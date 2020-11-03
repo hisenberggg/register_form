@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
 
   $servername = "localhost";
   $usernamedb = "root";
-  $passworddb = "";
+  $passworddb = "heis@@100";
   $dbname = "course_reg";
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $usernamedb, $passworddb);
@@ -49,7 +49,7 @@ VALUES (? , ? , ? , ?, ?, ? , ? , ? , ?)";
     array_push($success, "successfully registered");
     #$_SESSION["success"]= "successfully registered";
     //$succ_msg='Successfully registered';
-    //header('location: reg_form.php');
+    header('location: home.html');
   }
 
 } catch(PDOException $e) {

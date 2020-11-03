@@ -89,7 +89,7 @@ a {
   <div class="container">
     <h1>Fill this form to register for the course</h1>
 
-    <?php include('messages.php'); ?> 
+    <?php require_once 'messages.php'; ?> 
     
 
     <hr>

@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-
-	<style>
+<style>
 body {
   margin: 0;
 }
 
+ul {
+  list-style-type: none;
+  background-color: #99c2ff;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  /*background-color: #f1f1f1;*/
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
 
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
 
 /* Full-width input fields */
 input[type=text], input[type=password], input[type=number] {
@@ -66,48 +81,31 @@ a {
 
 </style>
 </head>
-<body>
+<body style="background-color:#e6f0ff ">
 
-<?php
+<ul >
+  <li><a  href="home.html">Home</a></li>
+  <li><a class="active" href="#addmem">Add Member</a></li>
+  <li><a href="#stream">Video Stream</a></li>
+  <li><a href="#news">Logs</a></li>
+  <li><a href="#contact">Unlock Access</a></li>
+  <li><a href="#about">Chatbot Simulation</a></li>
+  <li><a href="#logout">Logout</a></li>
+</ul>
 
-
- // define variables and set to empty values
-$username= $password = $name =$age = $email =$address = $gender =$city =$hobby =  "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $username = $_POST["username"];
-  $password = $_POST["psw"];
-  $name = $_POST["name"];
-  $age = $_POST["age"];
-  $email = $_POST["email"];
-  $address = $_POST["address"];
-  $gender = $_POST["gender"];
-  $city = $_POST["city"];
-  $hobby = $_POST["hobby"];
-}
-
-  if (strlen($password)<5){
-    echo '<script>alert("password too short")</script>';
-  }
-  else if($age<0){
-    echo '<script>alert("invalid age")</script>';
-  }
-  else
-  {
-    echo '<script>alert("Successfully registered ")</script>';
-  }
-
-?>
-
-<div style="padding:1px 16px;background-color: #e6f0ff">
+<div style="margin-left:25%;padding:1px 16px;background-color: #e6f0ff">
 	
-  
-  <header><h1>Registration Form</h1></header>
+  <u><h2>Add Member</h2></u>
+  <header><h2>Register here</h2></header>
 <section style="">
 
- <form name="myForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
+ <form  method="post" action="register.html" >
   <div class="container">
     <h1>Fill this form to register for the course</h1>
+
+    <?php require_once 'messages.php'; ?> 
+    
+
     <hr>
     
     <label for="username"><b>Username</b></label>
@@ -141,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
     <hr>
 
-    <button type="submit" class="registerbtn" >Register</button>
+    <button type="submit" name="submit" class="registerbtn" >Register</button>
   </div>
    
 </form>
@@ -149,5 +147,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </section>
  
 </div>
+<div style=" background-color: #000;margin-top: 20px">
+ <center> <footer style="color: #fff">Abhijeet,Kshitij and Amish&copy;2020</footer></center>
+</div>
+
+
 </body>
 </html>
